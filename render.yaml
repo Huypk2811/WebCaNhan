@@ -6,7 +6,6 @@ services:
     plan: free
     region: singapore
     branch: main
-    buildCommand: mvn clean package -DskipTests
     healthCheckPath: /
     envVars:
       - key: PORT

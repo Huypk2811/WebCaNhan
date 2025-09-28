@@ -12,7 +12,7 @@
    - **Region**: Singapore (gần nhất)
    - **Branch**: `main`
    - **Runtime**: Docker
-   - **Build Command**: `mvn clean package -DskipTests`
+   - **Build Command**: để trống (build sẽ thực hiện trong Docker)
    - **Start Command**: để trống (sử dụng CMD từ Dockerfile)
 
 ## Bước 3: Environment Variables (nếu cần)

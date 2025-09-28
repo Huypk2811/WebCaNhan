@@ -1,4 +1,8 @@
-# Maven
+# Maven build artifacts (chỉ giữ lại source code để build trong container)
+target/classes/
+target/test-classes/
+target/surefire-reports/
+target/failsafe-reports/
 .mvn/
 mvnw
 mvnw.cmd
@@ -17,19 +21,10 @@ Thumbs.db
 # Logs
 *.log
 
-# Runtime
-target/classes/
-target/test-classes/
-target/surefire-reports/
-target/failsafe-reports/
-
-# Keep only the WAR file
-target/*
-!target/*.war
-
 # Git
 .git/
 .gitignore
 
 # Documentation
 README.md
+DEPLOY.md
