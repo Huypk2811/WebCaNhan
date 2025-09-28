@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: personal-website
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: singapore
+    branch: main
+    buildCommand: mvn clean package -DskipTests
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: JAVA_OPTS
+        value: "-Xmx512m -Xms256m"

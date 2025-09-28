@@ -1,0 +1,35 @@
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Runtime
+target/classes/
+target/test-classes/
+target/surefire-reports/
+target/failsafe-reports/
+
+# Keep only the WAR file
+target/*
+!target/*.war
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
