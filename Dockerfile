@@ -37,6 +37,9 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 # Copy WAR file from build stage
 COPY --from=build /app/target/personal-website.war /usr/local/tomcat/webapps/ROOT.war
 
+# Copy custom tomcat configuration
+COPY tomcat.properties /usr/local/tomcat/conf/
+
 # Create logs directory
 RUN mkdir -p /usr/local/tomcat/logs
 
