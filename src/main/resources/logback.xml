@@ -7,14 +7,13 @@
         </encoder>
     </appender>
 
-    <!-- Reduce logging for Tomcat StandardServer -->
-    <logger name="org.apache.catalina.core.StandardServer" level="ERROR"/>
+    <!-- Tắt hoàn toàn logging cho Tomcat -->
+    <logger name="org.apache.catalina" level="OFF"/>
+    <logger name="org.apache.coyote" level="OFF"/>
+    <logger name="org.apache.tomcat" level="OFF"/>
     
-    <!-- Reduce logging for HEAD requests -->
-    <logger name="org.apache.coyote" level="ERROR"/>
-    
-    <!-- Root logger -->
-    <root level="INFO">
+    <!-- Root logger chỉ hiển thị ERROR -->
+    <root level="ERROR">
         <appender-ref ref="STDOUT"/>
     </root>
 </configuration>

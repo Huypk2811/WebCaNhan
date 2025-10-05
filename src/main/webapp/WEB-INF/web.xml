@@ -35,11 +35,6 @@
         <servlet-class>com.example.servlet.ContactServlet</servlet-class>
     </servlet>
     
-    <servlet>
-        <servlet-name>AdminContactServlet</servlet-name>
-        <servlet-class>com.example.servlet.AdminContactServlet</servlet-class>
-    </servlet>
-    
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/</url-pattern>
@@ -63,11 +58,6 @@
     <servlet-mapping>
         <servlet-name>ContactServlet</servlet-name>
         <url-pattern>/contact</url-pattern>
-    </servlet-mapping>
-    
-    <servlet-mapping>
-        <servlet-name>AdminContactServlet</servlet-name>
-        <url-pattern>/admin/contacts</url-pattern>
     </servlet-mapping>
     
     <!-- Character Encoding Filter -->
