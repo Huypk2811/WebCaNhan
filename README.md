@@ -212,7 +212,44 @@ public class NewFeatureServlet extends HttpServlet {
 
 ## 🚀 Deploy lên Production
 
-### 1. Heroku
+### 1. Render (Recommended)
+```bash
+# 1. Push code lên GitHub
+git add .
+git commit -m "Add database integration"
+git push origin main
+
+# 2. Trên Render Dashboard:
+# - Connect GitHub repository
+# - Choose "Web Service"
+# - Set build command: (Render will auto-detect Dockerfile)
+# - Set start command: (Render will use Dockerfile CMD)
+```
+
+**Environment Variables cho Render:**
+```
+DB_HOST=your-database-host
+DB_PORT=1433
+DB_NAME=PersonalWebsite
+DB_USERNAME=your-db-username
+DB_PASSWORD=your-db-password
+```
+
+### 2. Docker Deployment
+```bash
+# Build and run với Docker Compose
+docker-compose up -d
+
+# Hoặc build riêng lẻ
+docker build -t personal-website .
+docker run -p 8080:8080 \
+  -e DB_HOST=your-db-host \
+  -e DB_USERNAME=sa \
+  -e DB_PASSWORD=123456 \
+  personal-website
+```
+
+### 3. Heroku
 ```bash
 # Tạo Procfile
 echo "web: java -jar target/dependency/webapp-runner.jar --port \$PORT target/*.war" > Procfile
@@ -223,23 +260,35 @@ git commit -m "Deploy to Heroku"
 git push heroku main
 ```
 
-### 2. AWS Elastic Beanstalk
+### 4. AWS Elastic Beanstalk
 1. Tạo WAR file: `mvn package`
 2. Upload lên AWS Elastic Beanstalk
 3. Cấu hình environment variables
 
-### 3. Traditional Server
+### 5. Traditional Server
 1. Build WAR file
 2. Copy vào Tomcat webapps
 3. Cấu hình domain và SSL
+
+## 💾 Database Setup
+
+### Local Development
+1. Chạy script `database_setup.sql` trong SQL Server Management Studio
+2. Đảm bảo SQL Server đang chạy trên port 1433
+3. Sử dụng tài khoản `sa` với password `123456`
+
+### Production
+- Cấu hình database connection thông qua environment variables
+- Khuyên dùng Azure SQL Database hoặc AWS RDS cho production
+- Đảm bảo backup database thường xuyên
 
 ## 📞 Support
 
 Nếu bạn gặp vấn đề hoặc có câu hỏi:
 
-- **Email**: contact@example.com
+- **Email**: huypk2811@gmail.com
 - **GitHub Issues**: Tạo issue trên repository
-- **Documentation**: Xem wiki cho thông tin chi tiết
+- **Documentation**: Xem SETUP_DATABASE.md cho hướng dẫn chi tiết database
 
 ## 📄 License
 
@@ -255,4 +304,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ by [Your Name]**
+**Made with ❤️ by Vương Đức Huy**
