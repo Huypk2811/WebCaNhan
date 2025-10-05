@@ -20,4 +20,15 @@ public class HomeServlet extends HttpServlet {
         // Forward to home.jsp
         request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);
     }
+    
+    @Override
+    protected void doHead(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        
+        // Xử lý HEAD request để tránh warning trong logs
+        response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
+        response.setStatus(HttpServletResponse.SC_OK);
+        // Không gửi body cho HEAD request
+    }
 }

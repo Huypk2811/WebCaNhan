@@ -29,4 +29,14 @@ public class HealthCheckServlet extends HttpServlet {
         
         response.setStatus(HttpServletResponse.SC_OK);
     }
+    
+    @Override
+    protected void doHead(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        
+        // Xử lý HEAD request để tránh warning trong logs
+        response.setContentType("application/json");
+        response.setStatus(HttpServletResponse.SC_OK);
+        // Không gửi body cho HEAD request
+    }
 }
