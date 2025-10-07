@@ -56,6 +56,12 @@ public class PortfolioServlet extends HttpServlet {
         assignment8.put("sourceLink", "");
         projects.add(assignment8);
         
+        Map<String, String> assignment14 = new HashMap<>();
+        assignment14.put("title", "Bài tập 14");
+        assignment14.put("demoLink", "https://ch14-web.onrender.com");
+        assignment14.put("sourceLink", "");
+        projects.add(assignment14);
+        
         request.setAttribute("pageTitle", "Bài tập - Website cá nhân");
         request.setAttribute("currentPage", "portfolio");
         request.setAttribute("projects", projects);
